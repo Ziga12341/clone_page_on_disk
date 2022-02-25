@@ -1,10 +1,10 @@
 
-clone github lik
+git clone https://github.com/Ziga12341/clone_page_on_disk.git
 
-pip install pywebcopy
+pip install -r requirements.txt
 
 run python script 
-cmd cd to wotking directory
+cmd cd to working directory
 
 import classes
 from class_pywebcopy import Get_urls, Download_page,  Final, Mapping
@@ -15,7 +15,6 @@ get_urls.get_all_urls()
 
 wait about a minute that program scrape page and get all 253 links store it in all_urls.txt
 
-than
 scrape = Final()
 scrape.write_bat_and_vbs()
 in few seconds you will get .bat and .vbs file for each url
