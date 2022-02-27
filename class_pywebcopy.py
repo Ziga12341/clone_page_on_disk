@@ -63,7 +63,7 @@ class Get_urls:
     def get_all_urls(self):
         try: # if file with all urls exists just skip this function
             open("all_urls.txt", "r")
-        except: #if there is not file named "all_urls.txt" than establish it
+        except: #if there is not file named "all_urls.txt" than create it
             file = open("all_urls.txt", "w", encoding="utf-8")
             for url_from_arhive in self.get_all_arhive():
                 for old_url in self.older_entries(url_from_arhive):
@@ -115,8 +115,6 @@ class Mapping:
         os.makedirs("test_psiblog_git\www.psiblog.si\!all") #ustvari mapo !all
         dst_path = dir_name + "\\" + 'test_psiblog_git\www.psiblog.si\!all'
         for root, dirs, files in os.walk("test_psiblog_git\www.psiblog.si"):
-            print("files je:", files)
-            print("dirs je: ", dirs)
             for file in files:
                 if file.endswith(".html"):
                     print(os.path.join(root, file))
@@ -126,4 +124,14 @@ class Mapping:
                     shutil.move(new_name, dst_path) #move all .html in one dir named !all
 
 
+def main():
+    Get_urls().get_all_urls() #create directory all_urls... with list of all urls from that page
+    time.sleep(120)
+    Final().write_bat_and_vbs() #crate .bat and .vbs files (because Pywebcopy().save_webpage() not working properly)
+    time.sleep(10)
+    Final().run_vbs() #this use each link and download whole page for each link... when this is done all pages are on disk
+    time.sleep(60)
+    Mapping().reorder() #this metod put all .html files in one dorectory and rename it as original title of article
 
+if __name__ == '__main__':
+    main()
