@@ -112,7 +112,7 @@ class Mapping:
 
     def reorder(self):
         dir_name = os.getcwd()
-        os.makedirs("test_psiblog_git\www.psiblog.si\!all") #ustvari mapo !all
+        os.makedirs("test_psiblog_git\www.psiblog.si\!all") #create directory !all
         dst_path = dir_name + "\\" + 'test_psiblog_git\www.psiblog.si\!all'
         for root, dirs, files in os.walk("test_psiblog_git\www.psiblog.si"):
             for file in files:
