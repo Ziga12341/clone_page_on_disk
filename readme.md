@@ -6,6 +6,7 @@ Open CMD
 cd ... to directory you cloned this project.
 type: 
 pip install -r requirements.txt
+
 python classpywebcopy.py
 
 Explanation what each class will do.
@@ -31,7 +32,7 @@ map.reorder()
 This function will put all .htmls in map !all and rename file to title of article (last name in url)
 
 
-You will find all pages copied from blog to your hard drive in C:\...\test_psiblog_git\www.psiblog.si\!all
+You will find all pages copied from blog to your hard drive in C:\\...\\test_psiblog_git\\www.psiblog.si\\!all
 
 
 
