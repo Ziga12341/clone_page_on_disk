@@ -4,7 +4,9 @@ git clone https://github.com/Ziga12341/clone_page_on_disk.git
 
 Open CMD
 cd ... to directory you cloned this project.
+
 type: 
+
 pip install -r requirements.txt
 
 python classpywebcopy.py
