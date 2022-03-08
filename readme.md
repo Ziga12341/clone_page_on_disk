@@ -9,7 +9,14 @@ type:
 
 pip install -r requirements.txt
 
-python classpywebcopy.py
+or:
+
+You can download pywebcopy 6.3.0 here [Pywebcopy Link](https://github.com/rajatomar788/pywebcopy/)
+Copy downloaded files in directory in which you cloned this project.
+
+than:
+
+python class_pywebcopy.py
 
 Explanation what each class will do.
 
