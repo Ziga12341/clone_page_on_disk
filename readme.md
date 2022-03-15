@@ -1,7 +1,7 @@
 
 git clone https://github.com/Ziga12341/clone_page_on_disk.git
 
-
+for Windows:
 Open CMD
 cd ... to directory you cloned this project.
 
@@ -16,7 +16,7 @@ Copy downloaded files in directory in which you cloned this project.
 
 than:
 
-python class_pywebcopy.py
+python clone_page.py
 
 Explanation what each class will do.
 
@@ -41,7 +41,7 @@ map.reorder()
 This function will put all .htmls in map !all and rename file to title of article (last name in url)
 
 
-You will find all pages copied from blog to your hard drive in C:\\...\\test_psiblog_git\\www.psiblog.si\\!all
+You will find all pages copied from blog to your hard drive in C:\\...\\psiblog\\www.psiblog.si\\!all
 
 
 

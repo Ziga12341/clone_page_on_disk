@@ -76,7 +76,6 @@ class Get_urls:
 class Download_page(Get_urls):
     def __init__(self, i):
         super().__init__()
-        self.get_all_urls()
         self.url = [line for line in open("all_urls.txt", "r")][i] # read urls from .txt. this .txt is created from Get_urls
         self.project_folder = os.getcwd()
 
@@ -89,7 +88,6 @@ class Download_page(Get_urls):
 class Final(Get_urls):
     def __init__(self):
         super().__init__()
-        self.get_all_urls()
         self.urls_from_file = [line for line in open("all_urls.txt", "r")] #list with all urls from all_urls.txt file
 
     def write_bat_and_vbs(self):
