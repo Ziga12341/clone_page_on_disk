@@ -83,17 +83,17 @@ class Download_page(Get_urls):
 
     def downloader(self):
         print(self.url)
-        kwargs = {'bypass_robots': True, 'project_name': 'test_psiblog_git'}
+        kwargs = {'bypass_robots': True, 'project_name': 'psiblog'}
         save_webpage(url=self.url, project_folder=self.project_folder, **kwargs)
 
 class Final(Get_urls):
     def __init__(self):
         super().__init__()
         self.get_all_urls()
-        self.urls_from_file = [line for line in open("all_urls.txt", "r")]
+        self.urls_from_file = [line for line in open("all_urls.txt", "r")] #list with all urls from all_urls.txt file
 
     def write_bat_and_vbs(self):
-        for i in range(len(self.urls_from_file) - 1):
+        for i in range(len(self.urls_from_file)):
             file_name_bat = f"{i}_class_scrape.bat"
             file_bat = open(file_name_bat, "w", encoding="UTF-8")
             file_bat.write(f'python -c "import class_pywebcopy;class_pywebcopy.Download_page({i}).downloader()"\npause')
@@ -103,9 +103,9 @@ class Final(Get_urls):
             file_vbs.write(f'Set WshShell = CreateObject("WScript.Shell") \nWshShell.Run chr(34) & "{os.getcwd()}\\{file_name_bat}" & Chr(34), 0\nSet WshShell = Nothing')
 
     def run_vbs(self):
-        for i in range(len(self.urls_from_file) - 1):
+        for i in range(len(self.urls_from_file)):
             subprocess.call(f"cmd /c {i}_class_scrape.vbs")
-            time.sleep(15)
+            time.sleep(17)
 
 class Mapping:
 
@@ -114,11 +114,11 @@ class Mapping:
     def reorder(self):
         dir_name = os.getcwd()
         try:
-            os.makedirs("test_psiblog_git\www.psiblog.si\!all") #create directory !all
+            os.makedirs("psiblog\www.psiblog.si\!all") #create directory !all
         except:
             print("Directry already exists")
-        dst_path = dir_name + "\\" + 'test_psiblog_git\www.psiblog.si\!all'
-        for root, dirs, files in os.walk("test_psiblog_git\www.psiblog.si"):
+        dst_path = dir_name + "\\" + 'psiblog\www.psiblog.si\!all'
+        for root, dirs, files in os.walk("psiblog\www.psiblog.si"):
             for file in files:
                 if file.endswith(".html"):
                     print(os.path.join(root, file))
