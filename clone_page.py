@@ -94,7 +94,7 @@ class Final(Get_urls):
         for i in range(len(self.urls_from_file)):
             file_name_bat = f"{i}_class_scrape.bat"
             file_bat = open(file_name_bat, "w", encoding="UTF-8")
-            file_bat.write(f'python -c "import class_pywebcopy;class_pywebcopy.Download_page({i}).downloader()"\npause')
+            file_bat.write(f'python -c "import clone_page;clone_page.Download_page({i}).downloader()"\npause')
 
             file_name_vbs = f"{i}_class_scrape.vbs"
             file_vbs = open(file_name_vbs, "w", encoding="UTF-8")
